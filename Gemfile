@@ -4,6 +4,8 @@ gem 'rails', '3.2.13'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -16,6 +18,8 @@ group :development, :test do
   gem 'spork', '0.9.2'
    gem 'annotate', '2.5.0'
 end
+
+
 
 group :test do
   gem 'capybara', '1.1.2'
@@ -34,6 +38,10 @@ group :assets do
    gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem 'jquery-rails', '2.0.2'
