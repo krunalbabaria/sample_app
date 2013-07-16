@@ -2,25 +2,18 @@ SampleApp::Application.routes.draw do
  
   root to: 'static_pages#home'
    get "users/new"
-  resources :users
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
 
   # match '/home', to: 'static_pages#home'
  
   match '/help', to: 'static_pages#help'
   match '/aboutus', to: 'static_pages#aboutus'
   match '/signup',  to: 'users#new'
-
-  
-  
-
-  
-  
-
-  # get "static_pages/home"
-
-  # get "static_pages/help"
-
-  # get "static_pages/aboutus"
 
   
   
@@ -31,6 +24,10 @@ SampleApp::Application.routes.draw do
 
 
   resources :microposts, only: [:create, :destroy]
+
+
+
+    resources :relationships, only: [:create, :destroy]
  
   # The priority is based upon order of creation:
   # first created -> highest priority.
